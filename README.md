@@ -4,6 +4,13 @@ React hook for using state with validation
 
 # Work in Progress
 
+## TODOs
+
+- Add unit tests when interface stabilizes
+- isValid currently returns `true` for untouched values (to avoid showing error on new page loads).  Need to determine best approach
+
+----
+
 ## Syntax
 
 ```javascript
