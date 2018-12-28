@@ -7,7 +7,9 @@
     "dist": "rm -rf dist && babel src --out-dir dist --ignore **/*.test.js",
     "dist:watch": "babel src --out-dir dist --watch --ignore **/*.test.js",
     "lint": "eslint src",
-    "version": "npm run dist && git add dist"
+    "version": "npm run dist && git add dist",
+    "prepublishOnly": "npm run dist",
+    "postpublish": "git push --no-verify && git push --tags"
   },
   "keywords": [
     "react",
@@ -16,6 +18,7 @@
   ],
   "author": "bestguy",
   "license": "MIT",
+  "repository": "https://github.com/bestguy/react-use-validated-state",
   "dependencies": {
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
