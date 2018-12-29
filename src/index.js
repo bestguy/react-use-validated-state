@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import validate from 'validate.js';
 
-export default (defaultValue, constraints = { presence: true }) => {
+export default (defaultValue, constraints = {}, validateImmediately = false) => {
   const [value, setValue] = useState(defaultValue);
-  const [touched, setTouched] = useState(false);
-
+  const [touched, setTouched] = useState(validateImmediately);
+  const validationMessage = validate.single(value, constraints);
   const setValueAndTouch = (newValue) => {
     setTouched(true);
     setValue(newValue);
   };
 
-  const validationMessage = validate.single(value, constraints);
   return [
     value,
     setValueAndTouch,
