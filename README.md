@@ -43,11 +43,9 @@ Default value:
 ### Return values
 
 `state`
-
 The current state value.
 
 `setState`
-
 Function used to update the state. It accepts a new state value and enqueues a re-render of the component.
 
 `isValid`
