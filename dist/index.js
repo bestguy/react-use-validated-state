@@ -20,26 +20,25 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var _default = function _default(defaultValue) {
-  var constraints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-    presence: true
-  };
+  var constraints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var validateImmediately = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
   var _useState = (0, _react.useState)(defaultValue),
       _useState2 = _slicedToArray(_useState, 2),
       value = _useState2[0],
       setValue = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(false),
+  var _useState3 = (0, _react.useState)(validateImmediately),
       _useState4 = _slicedToArray(_useState3, 2),
       touched = _useState4[0],
       setTouched = _useState4[1];
+
+  var validationMessage = _validate.default.single(value, constraints);
 
   var setValueAndTouch = function setValueAndTouch(newValue) {
     setTouched(true);
     setValue(newValue);
   };
-
-  var validationMessage = _validate.default.single(value, constraints);
 
   return [value, setValueAndTouch, !touched || validationMessage === undefined, validationMessage];
 };
