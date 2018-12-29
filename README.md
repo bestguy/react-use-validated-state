@@ -35,7 +35,7 @@ Default value:
 
 `validateImmediately`
 
-Optional.  Boolean value whether to validate on initial render, otherwise wil validate after first change.
+Optional.  Boolean value whether to validate on initial render, otherwise will validate after first change.
 
 Default value:
 `false`
@@ -43,11 +43,9 @@ Default value:
 ### Return values
 
 `state`
-
 The current state value.
 
 `setState`
-
 Function used to update the state. It accepts a new state value and enqueues a re-render of the component.
 
 `isValid`
