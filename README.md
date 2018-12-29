@@ -35,7 +35,7 @@ Default value:
 
 `validateImmediately`
 
-Optional.  Boolean value whether to validate on initial render, otherwise wil validate after first change.
+Optional.  Boolean value whether to validate on initial render, otherwise will validate after first change.
 
 Default value:
 `false`
