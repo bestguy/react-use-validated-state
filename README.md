@@ -23,18 +23,15 @@ Returns a stateful value, a function to update it, whether it's valid, and valid
 ### Parameters
 
 `initialState`
-
 The initial state value.  During the initial render, the returned state is the same as this value.
 
 `validationConstraints`
-
 Optional.  Accepts a constraints object, please see [validate.js documentation](https://validatejs.org/#validate-single)
 
 Default value:
 `{}`
 
 `validateImmediately`
-
 Optional.  Boolean value whether to validate on initial render, otherwise will validate after first change.
 
 Default value:
