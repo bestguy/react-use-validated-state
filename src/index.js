@@ -14,6 +14,6 @@ export default (defaultValue, constraints = {}, validateImmediately = false) => 
     value,
     setValueAndTouch,
     !touched || validationMessage === undefined,
-    validationMessage
+    touched ? validationMessage : undefined
   ];
 };

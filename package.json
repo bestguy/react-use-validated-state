@@ -9,7 +9,8 @@
     "lint": "eslint src",
     "version": "npm run dist && git add dist",
     "prepublishOnly": "npm run dist",
-    "postpublish": "git push --no-verify && git push --tags"
+    "postpublish": "git push --no-verify && git push --tags",
+    "test": "jest"
   },
   "keywords": [
     "react",
@@ -26,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.1.2",
     "@babel/plugin-proposal-export-namespace-from": "^7.1.2",
     "@babel/plugin-proposal-function-sent": "^7.1.2",
@@ -38,9 +39,15 @@
     "@babel/plugin-transform-react-jsx": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "eslint": "^5.11.1",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-import": "^0.13.0"
+    "eslint-config-import": "^0.13.0",
+    "jest": "^23.6.0",
+    "react-testing-library": "^5.4.2",
+    "regenerator-runtime": "^0.13.1"
   }
 }
