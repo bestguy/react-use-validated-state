@@ -1,10 +1,13 @@
 # react-use-validated-state
 
-React hook for using state with validation
+React hook for using state with validation.  Uses [validate.js](https://validatejs.org/)
 
-## Work in Progress - TODOs:
+----
 
-- Add unit tests when interface stabilizes
+### TODO:
+
+- Allow custom validation callback?
+- Uses [`validate.single`](https://validatejs.org/#validate-single) - is this sufficient?
 
 ----
 
