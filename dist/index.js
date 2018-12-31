@@ -40,7 +40,10 @@ var _default = function _default(defaultValue) {
     setValue(newValue);
   };
 
-  return [value, setValueAndTouch, !touched || validationMessage === undefined, touched ? validationMessage : undefined];
+  return [value, setValueAndTouch, touched ? validationMessage === undefined : undefined, validationMessage, function () {
+    var touchValue = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+    return setTouched(touchValue);
+  }];
 };
 
 exports.default = _default;
