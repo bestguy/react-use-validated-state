@@ -13,7 +13,8 @@ export default (defaultValue, constraints = {}, validateImmediately = false) => 
   return [
     value,
     setValueAndTouch,
-    !touched || validationMessage === undefined,
-    touched ? validationMessage : undefined
+    touched ? validationMessage === undefined : undefined,
+    validationMessage,
+    (touchValue = true) => setTouched(touchValue)
   ];
 };

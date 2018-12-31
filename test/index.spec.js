@@ -18,7 +18,7 @@ const ValidationWrapper = ({ email, validate = false }) => {
   return (
     <>
       <input value={value || ''} onChange={e => setValue(e.target.value)} />
-      {!isValid && <div data-testid="msg">{validationMessage}</div>}
+      {(isValid === false) && <div data-testid="msg">{validationMessage}</div>}
     </>
   );
 }
