@@ -21,8 +21,8 @@
   "license": "MIT",
   "repository": "https://github.com/bestguy/react-use-validated-state",
   "dependencies": {
-    "react": "^16.8.0-alpha.0",
-    "react-dom": "^16.8.0-alpha.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "validate.js": "^0.12.0"
   },
   "devDependencies": {
