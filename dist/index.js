@@ -7,10 +7,6 @@ exports.default = void 0;
 
 var _react = require("react");
 
-var _validate = _interopRequireDefault(require("validate.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -20,7 +16,9 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var _default = function _default(defaultValue) {
-  var constraints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var isInvalid = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {
+    return undefined;
+  };
   var validateImmediately = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
   var _useState = (0, _react.useState)(defaultValue),
@@ -33,14 +31,14 @@ var _default = function _default(defaultValue) {
       touched = _useState4[0],
       setTouched = _useState4[1];
 
-  var validationMessage = _validate.default.single(value, constraints);
+  var validationMessage = isInvalid(value);
 
   var setValueAndTouch = function setValueAndTouch(newValue) {
     setTouched(true);
     setValue(newValue);
   };
 
-  return [value, setValueAndTouch, touched ? validationMessage === undefined : undefined, validationMessage, function () {
+  return [value, setValueAndTouch, touched ? validationMessage === undefined : undefined, touched ? validationMessage : undefined, function () {
     var touchValue = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
     return setTouched(touchValue);
   }];
