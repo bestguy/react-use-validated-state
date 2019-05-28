@@ -1,13 +1,8 @@
 import React from 'react';
 import { render, cleanup, fireEvent, getByTestId, queryByTestId } from 'react-testing-library';
-import useValidatedState from '../src/index';
+import useValidatedState from '../src/validatejs';
 
 afterEach(cleanup);
-
-function validateEmail(email) {
-  const regex = /\S+@\S+\.\S+/;
-  return (email && regex.test(email)) ? undefined : 'is not a valid email';
-}
 
 const SimpleWrapper = () => {
   const [value, setValue] = useValidatedState('oogah');
@@ -15,7 +10,11 @@ const SimpleWrapper = () => {
 }
 
 const ValidationWrapper = ({ email, validate = false }) => {
-  const [value, setValue, isValid, validationMessage] = useValidatedState(email, validateEmail, validate);
+  const constraints = {
+    presence: true,
+    email: true
+  }
+  const [value, setValue, isValid, validationMessage] = useValidatedState(email, constraints, validate);
   return (
     <>
       <input value={value || ''} onChange={e => setValue(e.target.value)} />

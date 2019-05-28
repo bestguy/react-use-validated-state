@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import validate from 'validate.js';
 
-export default (defaultValue, constraints = {}, validateImmediately = false) => {
+export default (defaultValue, isInvalid = () => undefined, validateImmediately = false) => {
   const [value, setValue] = useState(defaultValue);
   const [touched, setTouched] = useState(validateImmediately);
-  const validationMessage = validate.single(value, constraints);
+  const validationMessage = isInvalid(value);
   const setValueAndTouch = (newValue) => {
     setTouched(true);
     setValue(newValue);
@@ -14,7 +13,7 @@ export default (defaultValue, constraints = {}, validateImmediately = false) => 
     value,
     setValueAndTouch,
     touched ? validationMessage === undefined : undefined,
-    validationMessage,
+    touched ? validationMessage : undefined,
     (touchValue = true) => setTouched(touchValue)
   ];
 };
