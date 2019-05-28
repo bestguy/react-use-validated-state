@@ -1,6 +1,6 @@
 {
   "name": "react-use-validated-state",
-  "version": "0.1.0-rc.2",
+  "version": "0.2.1",
   "description": "React hook for using state with validation",
   "main": "dist/index.js",
   "scripts": {
