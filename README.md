@@ -4,18 +4,11 @@ React hook for using state with validation.  Uses [validate.js](https://validate
 
 ----
 
-### TODO:
-
-- Allow custom validation callback?
-- Uses [`validate.single`](https://validatejs.org/#validate-single) - is this sufficient?
-
-----
-
 ## Syntax
 
 ```javascript
 const [state, setState, isValid, validationMessage, validate] =
-       useValidatedState(initialState, validationConstraints, validateImmediately]);
+       useValidatedState(initialState, getValidationMessage, validateImmediately]);
 ```
 Returns a stateful value, a function to update it, whether it's valid, and validation message (if invalid).
 
@@ -25,11 +18,11 @@ Returns a stateful value, a function to update it, whether it's valid, and valid
 `initialState`
 The initial state value.  During the initial render, the returned state is the same as this value.
 
-`validationConstraints`
-Optional.  Accepts a constraints object, please see [validate.js documentation](https://validatejs.org/#validate-single)
+`getValidationMessage`
+Optional.  Function that receives the current state value, and returns a validation string if invalid, otherwite should return undefined;
 
 Default value:
-`{}`
+`() => undefined`
 
 `validateImmediately`
 Optional.  Boolean value whether to validate on initial render, otherwise will validate after first change.
