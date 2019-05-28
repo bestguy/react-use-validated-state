@@ -19,7 +19,7 @@ Returns a stateful value, a function to update it, whether it's valid, and valid
 The initial state value.  During the initial render, the returned state is the same as this value.
 
 `getValidationMessage`
-Optional.  Function that receives the current state value, and returns a validation string if invalid, otherwite should return undefined;
+Optional.  Function that receives the current state value, and returns a validation string if invalid, otherwise should return `undefined`;
 
 Default value:
 `() => undefined`
