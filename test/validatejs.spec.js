@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, getByTestId, queryByTestId } from 'react-testing-library';
+import { render, cleanup, fireEvent, getByTestId, queryByTestId } from '@testing-library/react';
 import useValidatedState from '../src/validatejs';
 
 afterEach(cleanup);
